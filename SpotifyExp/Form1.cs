@@ -249,16 +249,27 @@ namespace SpotifyExp
                 DataTable table = new DataTable();
                 List<ListViewItem> lvi = new List<ListViewItem>();
                 trackInfoBindingSource.Clear();
+               
                 for (int i = 0; i < o["items"].Count(); i++)
                 {
                     if (album.Contains((string)o["items"][i]["album"]["name"]))
                     {
+                        //   Debug.Write();
+                        System.Net.WebRequest request = System.Net.WebRequest.Create((string)o["items"][i]["album"]["images"][0]["url"]);
+                        System.Net.WebResponse response = request.GetResponse();
+                        System.IO.Stream responseStream =
+                        response.GetResponseStream();
+                        Bitmap bitmap = new Bitmap(responseStream);
+                        flowLayoutPanel2.Visible = true;
+                        flowLayoutPanel2.BackgroundImage = ResizeBitmap(bitmap, 125, 125);
+
                         for (int j = 0; j < o["items"][i]["album"]["tracks"]["items"].Count(); j++)
                         {
                             trackInfoBindingSource.Add(new TrackInfo() { TrackName = (string)o["items"][i]["album"]["tracks"]["items"][j]["name"], URL = (string)o["items"][i]["album"]["tracks"]["items"][j]["preview_url"] });                            
                         }
                     }
                 }
+             
             }
             }
     public async void GetInfo()
@@ -286,7 +297,7 @@ namespace SpotifyExp
                 username.Visible = true;
                 Email.Visible = true;
                 Country.Visible = true;
-                flowLayoutPanel1.BackgroundImage = ResizeBitmap(bitmap2, 100, 100);
+                flowLayoutPanel1.BackgroundImage = ResizeBitmap(bitmap2, 125, 125);
                 webBrowser1.Visible = false;
                 
                 GetSavedAlbums();

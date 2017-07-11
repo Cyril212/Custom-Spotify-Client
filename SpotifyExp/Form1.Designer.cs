@@ -17,7 +17,7 @@
             {
                 components.Dispose();
             }
-            base.Dispose(disposing);
+            base.Dispose(disposing);                    
         }
 
         #region Windows Form Designer generated code
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Play = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +44,10 @@
             this.Album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Band = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Release = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.trackNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uRLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trackInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInfoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -84,9 +85,9 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(92, 40);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(87, 42);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(100, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(125, 125);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Visible = false;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
@@ -94,7 +95,7 @@
             // username
             // 
             this.username.AutoSize = true;
-            this.username.Location = new System.Drawing.Point(100, 153);
+            this.username.Location = new System.Drawing.Point(100, 179);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(10, 13);
             this.username.TabIndex = 4;
@@ -105,7 +106,7 @@
             // Email
             // 
             this.Email.AutoSize = true;
-            this.Email.Location = new System.Drawing.Point(100, 178);
+            this.Email.Location = new System.Drawing.Point(100, 204);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(10, 13);
             this.Email.TabIndex = 5;
@@ -115,7 +116,7 @@
             // Country
             // 
             this.Country.AutoSize = true;
-            this.Country.Location = new System.Drawing.Point(100, 203);
+            this.Country.Location = new System.Drawing.Point(100, 229);
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(10, 13);
             this.Country.TabIndex = 6;
@@ -126,7 +127,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(506, 241);
+            this.label2.Location = new System.Drawing.Point(505, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 9;
@@ -142,7 +143,7 @@
             this.uRLDataGridViewTextBoxColumn,
             this.PlaySong});
             this.dataGridView2.DataSource = this.trackInfoBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(307, 257);
+            this.dataGridView2.Location = new System.Drawing.Point(307, 273);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(425, 210);
             this.dataGridView2.TabIndex = 10;
@@ -187,6 +188,14 @@
             this.Release.Text = "Release";
             this.Release.Width = 113;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(87, 273);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(125, 125);
+            this.flowLayoutPanel2.TabIndex = 4;
+            this.flowLayoutPanel2.Visible = false;
+            // 
             // trackNameDataGridViewTextBoxColumn
             // 
             this.trackNameDataGridViewTextBoxColumn.DataPropertyName = "TrackName";
@@ -203,19 +212,11 @@
             // 
             this.trackInfoBindingSource.DataSource = typeof(SpotifyExp.TrackInfo);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(92, 299);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(100, 100);
-            this.flowLayoutPanel2.TabIndex = 4;
-            this.flowLayoutPanel2.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 526);
+            this.ClientSize = new System.Drawing.Size(287, 254);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.dataGridView2);
@@ -227,8 +228,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.Play);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Custom Spotify";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
