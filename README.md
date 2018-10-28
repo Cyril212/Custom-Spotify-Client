@@ -1,2 +1,2 @@
 # Custom-Spotify-Client
-Custom realization of Spotify client using official API .
+Custom implementation of Spotify client using official API .
